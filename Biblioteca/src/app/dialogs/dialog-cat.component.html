@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Formulario Agregar Categoria</h1>
+<div mat-dialog-content>
+  <form [formGroup]="catForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Categoria</mat-label>
+      <input formControlName="nombreCategoria" matInput placeholder="Categoria" />
+      <mat-icon matSuffix>bookmark</mat-icon>
+    </mat-form-field>
+    <div mat-dialog-action [align]="'right'">
+      <button mat-raised-button color="primary" (click)="agregarCategoria()">{{actionsBtn}}</button>
+      <button style="margin-left: 8px;" mat-raised-button color="warn" mat-dialog-close="">Cerrar</button>
+    </div>
+  </form>
+</div>

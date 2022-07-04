@@ -1,13 +1,26 @@
 {
-  "listaLibro": [],
-  "comments": [
+  "listaLibro": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "tituloLibro": "asd",
+      "autorLibro": "asda",
+      "categoriaLibro": "Humor",
+      "portadaLibro": "asdasd",
+      "fechaLibro": "2022-07-28T05:00:00.000Z",
+      "id": 1
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "listaCategoria": [
+    {
+      "nombreCategoria": "Humor",
+      "id": 1
+    },
+    {
+      "nombreCategoria": "Terror",
+      "id": 2
+    },
+    {
+      "nombreCategoria": "Suspenso",
+      "id": 3
+    }
+  ]
 }
