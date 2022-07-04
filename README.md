@@ -3,7 +3,7 @@
 Clone Repository
 
 ```
-git clone https://](https://github.com/gerardo-amezcua/PruebaTecnica.git
+git clone https://https://github.com/gerardo-amezcua/PruebaTecnica.git
 ```
 
 Development server
