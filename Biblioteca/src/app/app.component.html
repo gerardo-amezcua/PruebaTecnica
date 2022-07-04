@@ -8,3 +8,72 @@
   <button mat-raised-button color="warn" (click)="openDialog()">Agregar Libro</button>
   <!-- -------------------------------------- -->
 </mat-toolbar>
+
+<div class="container">
+  <div style="margin-top: 10px;">
+    <mat-form-field appearance="standard">
+      <mat-label>Filtrar Busqueda</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ejemplo: Humor" #input>
+    </mat-form-field>
+    
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+    
+        <!-- ID Column -->
+        <ng-container matColumnDef="tituloLibro">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Titulo </th>
+          <td mat-cell *matCellDef="let row"> {{row.tituloLibro}} </td>
+        </ng-container>
+    
+        <!-- Progress Column -->
+        <ng-container matColumnDef="autorLibro">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Autor </th>
+          <td mat-cell *matCellDef="let row"> {{row.autorLibro}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="categoriaLibro">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoria </th>
+          <td mat-cell *matCellDef="let row"> {{row.categoriaLibro}} </td>
+        </ng-container>
+    
+        <!-- Fruit Column -->
+        <ng-container matColumnDef="portadaLibro">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Portada </th>
+          <td mat-cell *matCellDef="let row"> {{row.portadaLibro}} </td>
+        </ng-container>
+
+        <!-- Fruit Column -->
+        <ng-container matColumnDef="fechaLibro">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+          <td mat-cell *matCellDef="let row"> {{row.fechaLibro | date}} </td>
+        </ng-container>
+
+        <!-- Fruit Column -->
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="editLibros(row)" color="primary">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="eliminarLibro(row.id)" color="warn">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+    
+  
+  </div>
+</div>
