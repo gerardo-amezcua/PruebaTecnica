@@ -1,1 +1,45 @@
-<p>dialog works!</p>
+<h1 mat-dialog-title>Formulario Agregar Libro</h1>
+<div mat-dialog-content>
+  <form [formGroup]="libroForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Titulo</mat-label>
+      <input formControlName="tituloLibro" matInput placeholder="Titulo" />
+      <mat-icon matSuffix>bookmark</mat-icon>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Autor</mat-label>
+      <input formControlName="autorLibro" matInput placeholder="Autor" />
+      <mat-icon matSuffix>account_box</mat-icon>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="categoriaLibro" placeholder="Categoria">
+        <mat-option value="Suspenso">Suspenso</mat-option>
+        <mat-option value="Humor">Humor</mat-option>
+        <mat-option value="Drama">Drama</mat-option>
+        <mat-option value="Romance">Romance</mat-option>
+        <mat-option value="Informativo">Informativo</mat-option>
+      </mat-select>
+      <mat-icon matSuffix>assignment</mat-icon>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Portada</mat-label>
+      <input formControlName="portadaLibro" matInput placeholder="Seleccione Imagen" />
+      <mat-icon matSuffix>camera_enhance</mat-icon>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Fecha de Publicacion</mat-label>
+      <input formControlName="fechaLibro" matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-action [align]="'right'">
+  <button mat-raised-button color="primary" (click)="agregarLibro()">Guardar</button>
+  <button style="margin-left: 8px;" mat-raised-button color="warn" mat-dialog-close="">Cerrar</button>
+</div>

@@ -9,9 +9,12 @@ import { DialogComponent } from './dialog/dialog.component';
 })
 export class AppComponent {
   title = 'Biblioteca';
+  
+  // Se agrega constructor para Dialog
   constructor(private dialog: MatDialog){
 
   }
+  // Funcion de Dialog
   openDialog() {
     this.dialog.open(DialogComponent, {
      width:'30%'

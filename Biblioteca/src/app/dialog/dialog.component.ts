@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-dialog',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogComponent implements OnInit {
 
-  constructor() { }
+// Funcion para guardar libro
+libroForm !: FormGroup;
+
+  constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit(): void {
+    this.libroForm = this.formBuilder.group({
+      tituloLibro :['', Validators.required],
+      autorLibro :['', Validators.required],
+      categoriaLibro :['', Validators.required],
+      portadaLibro :['', Validators.required],
+      fechaLibro :['', Validators.required]
+    })
+  }
+
+  agregarLibro(){
+    console.log(this.libroForm.value);
   }
 
 }
