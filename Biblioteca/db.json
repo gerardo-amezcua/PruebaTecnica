@@ -1,0 +1,22 @@
+{
+  "listaLibro": [
+    {
+      "tituloLibro": "Los ojos de mi princesa",
+      "autorLibro": "Carlos Ahumado",
+      "categoriaLibro": "Drama",
+      "portadaLibro": "x",
+      "fechaLibro": "2022-07-11T05:00:00.000Z",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
