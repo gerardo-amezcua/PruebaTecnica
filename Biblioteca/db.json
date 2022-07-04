@@ -1,22 +1,26 @@
 {
   "listaLibro": [
     {
-      "tituloLibro": "Los ojos de mi princesa",
-      "autorLibro": "Carlos Ahumado",
-      "categoriaLibro": "Drama",
-      "portadaLibro": "x",
-      "fechaLibro": "2022-07-11T05:00:00.000Z",
+      "tituloLibro": "asd",
+      "autorLibro": "asda",
+      "categoriaLibro": "Humor",
+      "portadaLibro": "asdasd",
+      "fechaLibro": "2022-07-28T05:00:00.000Z",
       "id": 1
     }
   ],
-  "comments": [
+  "listaCategoria": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nombreCategoria": "Humor",
+      "id": 1
+    },
+    {
+      "nombreCategoria": "Terror",
+      "id": 2
+    },
+    {
+      "nombreCategoria": "Suspenso",
+      "id": 3
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

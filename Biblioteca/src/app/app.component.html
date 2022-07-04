@@ -7,49 +7,52 @@
   <!-- Se agrega funcionalidad al botton de agregar libro -->
   <button mat-raised-button color="warn" (click)="openDialog()">Agregar Libro</button>
   <!-- -------------------------------------- -->
+  <!-- Se agrega funcionalidad al botton de agregar categoria -->
+  <button style="margin-left: 8px;" mat-raised-button color="warn" (click)="openDialogCat()">Agregar Categoria</button>
+  <!-- -------------------------------------- -->
 </mat-toolbar>
 
 <div class="container">
   <div style="margin-top: 10px;">
     <mat-form-field appearance="standard">
       <mat-label>Filtrar Busqueda</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ejemplo: Humor" #input>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Nombre libro o autor" #input>
     </mat-form-field>
     
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
     
-        <!-- ID Column -->
+        <!-- Columna titulo Libros -->
         <ng-container matColumnDef="tituloLibro">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Titulo </th>
           <td mat-cell *matCellDef="let row"> {{row.tituloLibro}} </td>
         </ng-container>
     
-        <!-- Progress Column -->
+        <!-- Columna Autor Libro -->
         <ng-container matColumnDef="autorLibro">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Autor </th>
           <td mat-cell *matCellDef="let row"> {{row.autorLibro}} </td>
         </ng-container>
     
-        <!-- Name Column -->
+        <!-- Columna Categoria Libro -->
         <ng-container matColumnDef="categoriaLibro">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoria </th>
           <td mat-cell *matCellDef="let row"> {{row.categoriaLibro}} </td>
         </ng-container>
     
-        <!-- Fruit Column -->
+        <!-- Columna Portada Libro -->
         <ng-container matColumnDef="portadaLibro">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Portada </th>
           <td mat-cell *matCellDef="let row"> {{row.portadaLibro}} </td>
         </ng-container>
 
-        <!-- Fruit Column -->
+        <!-- Columna fecha libro -->
         <ng-container matColumnDef="fechaLibro">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
           <td mat-cell *matCellDef="let row"> {{row.fechaLibro | date}} </td>
         </ng-container>
 
-        <!-- Fruit Column -->
+        <!-- Columna acciones -->
         <ng-container matColumnDef="acciones">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </th>
           <td mat-cell *matCellDef="let row">
@@ -67,13 +70,52 @@
     
         <!-- Row shown when there is no matching data. -->
         <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          <td class="mat-cell" colspan="4">No se encontro Informacion para filtrar"{{input.value}}"</td>
         </tr>
       </table>
     
       <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
     </div>
+  </div>
+</div>
+<br>
+
+<div class="container">
+  <div style="margin-top: 10px;">
+    <mat-form-field appearance="standard">
+      <mat-label>Filtrar Busqueda</mat-label>
+      <input matInput (keyup)="applyFilterCat($event)" placeholder="Ejemplo: Humor" #inputCat>
+    </mat-form-field>
     
-  
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSources" matSort>
+    
+        <!-- ID Column -->
+        <ng-container matColumnDef="nombreCategoria">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoria </th>
+          <td mat-cell *matCellDef="let row"> {{row.nombreCategoria}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="accionesCat">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="editCategoria(row)" color="primary">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="eliminarCategoria(row.id)" color="warn">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumn"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumn;"></tr>
+    
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No se encontro Informacion para filtrar"{{inputCat.value}}"</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>
