@@ -25,7 +25,7 @@ actionBtn : string = "Guardar";
       autorLibro :['', Validators.required],
       categoriaLibro :['', Validators.required],
       portadaLibro :['', Validators.required],
-      fechaLibro :['', Validators.required]
+      fechaLibro :['']
     })
 
      if(this.editData){

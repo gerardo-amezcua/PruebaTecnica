@@ -1,26 +1,4 @@
 {
-  "listaLibro": [
-    {
-      "tituloLibro": "asd",
-      "autorLibro": "asda",
-      "categoriaLibro": "Humor",
-      "portadaLibro": "asdasd",
-      "fechaLibro": "2022-07-28T05:00:00.000Z",
-      "id": 1
-    }
-  ],
-  "listaCategoria": [
-    {
-      "nombreCategoria": "Humor",
-      "id": 1
-    },
-    {
-      "nombreCategoria": "Terror",
-      "id": 2
-    },
-    {
-      "nombreCategoria": "Suspenso",
-      "id": 3
-    }
-  ]
+  "listaLibro": [],
+  "listaCategoria": []
 }
