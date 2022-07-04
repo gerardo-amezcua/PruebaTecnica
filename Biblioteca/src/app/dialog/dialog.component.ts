@@ -10,7 +10,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 })
 export class DialogComponent implements OnInit {
 
-// Funcion para guardar libro o categoria
+// Funcion para guardar libro
 libroForm !: FormGroup;
 actionBtn : string = "Guardar";
 
